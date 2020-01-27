@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -37,7 +39,7 @@ class User implements UserInterface
      * @Assert\NotBlank(message="Vous devez saisir une adresse email.")
      * @Assert\Email(message="Le format de l'adresse n'est pas correcte.")
      */
-    private $email;
+    private $email; 
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Task", mappedBy="autor", cascade={"persist"})
@@ -48,6 +50,11 @@ class User implements UserInterface
      * @ORM\Column(name="roles", type="array")
      */
     private $roles = array();
+
+    public function __construct()
+    {
+        $this->task = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -96,5 +103,48 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Task[]
+     */
+    public function getTask(): Collection
+    {
+        return $this->task;
+    }
+
+    public function setTask($task)
+    {
+        $this->task = $task;
+    }
+
+    public function addTask(Task $task): self
+    {
+        if (!$this->task->contains($task)) {
+            $this->task[] = $task;
+            $task->setAutor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTask(Task $task): self
+    {
+        if ($this->task->contains($task)) {
+            $this->task->removeElement($task);
+            // set the owning side to null (unless already changed)
+            if ($task->getAutor() === $this) {
+                $task->setAutor(null);
+            }
+        }
+
+        return $this;
     }
 }

@@ -1,9 +1,10 @@
-<?php
+<?php 
 
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
@@ -50,7 +51,6 @@ class Task
     {
         $this->createdAt = new \Datetime();
         $this->isDone = false;
-        $this->autor = new ArrayCollection();
     }
     
 
@@ -98,4 +98,30 @@ class Task
     {
         $this->isDone = $flag;
     }
+
+    public function getIsDone(): ?bool
+    {
+        return $this->isDone;
+    }
+
+    public function setIsDone(bool $isDone): self
+    {
+        $this->isDone = $isDone;
+
+        return $this;
+    }
+
+    public function getAutor(): ?User
+    {
+        return $this->autor;
+    }
+
+    public function setAutor(?User $autor): self
+    {
+        $this->autor = $autor;
+
+        return $this;
+    }
+    
+    
 }

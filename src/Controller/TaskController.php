@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Task;
+use App\Entity\User;
 use App\Form\TaskType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -13,31 +14,37 @@ class TaskController extends Controller
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function listAction()
+    public function listAction(/*User $user*/)
     {
-        return $this->render('task/list.html.twig', ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()]);
+        //$user = $this->getUser();
+        return $this->render('task/list.html.twig', 
+        ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()/*,
+        'user' => $user*/]);
     }
 
     /**
      * @Route("/tasks/create", name="task_create")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request) 
     {
         $user = $this->getUser();
+        
         $task = new Task();
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $orm = $this->getDoctrine()->getManager();
 
-            //$task->addAutor($this->getUser());
-            $task->addAutor($user);
+            //$user->addTask($task);
+
+            $task->setAutor($this->getUser());
+            $task->setAutor($user);
             $orm->persist($task);
             $orm->flush();
 
-            $this->addFlash('success', 'La tâche a été bien été ajoutée.');
+            $this->addFlash('success', 'La tâche a bien été ajoutée.');
 
             return $this->redirectToRoute('task_list');
         }
