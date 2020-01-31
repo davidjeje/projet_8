@@ -1,0 +1,85 @@
+<?php
+// tests/Controller/ClientControllerTest.php
+namespace App\tests\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Entity\User;
+
+class UserControllerTest extends WebTestCase
+{
+    /**
+    * @var \Doctrine\ORM\EntityManager
+    */
+    private $entityManager;
+
+    
+    public function testGetlistAction()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('POST', '/users');
+        // Premier test
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        //Deuxième test
+        // asserts that there are exactly 1 h1 tags on the page
+        $this->assertCount(1, $crawler->filter('h1'));
+        // asserts that the "Content-Type" header is "application/json"
+        $this->assertTrue
+        (
+            $client->getResponse()->headers->contains
+            (
+                '<title>To Do List app</title>'
+            ),
+            
+        );
+        
+        
+    }
+
+    public function testCreateAction()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('POST', '/users/create');
+        
+        // Premier test
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        //Deuxième test
+        //$this->assertCount(1, $crawler->filter('h1'));
+        //$client->request('POST', '/submit', ['username' => 'user@attineos.com']);
+         /*$this->assertTrue
+        (
+            $client->getResponse()->headers->contains
+            (
+                '<title>To Do List app</title>'
+            ),
+            
+        );*/
+        // submits a raw JSON string in the request body
+        
+    }
+
+    public function testEditAction()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/users/{id}/edit');
+        // Premier test
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        //Deuxième test
+        // asserts that the "Content-Type" header is "application/json"
+        /*$this->assertTrue
+        (
+            $client->getResponse()->headers->contains
+            (
+                'Content-Type',
+                'application/json'
+            ),
+            'the "Content-Type" header is "application/json"' // optional message shown on failure
+        );*/
+        //$this->assertCount(1, $crawler->filter('h1'));
+
+
+    }
+
+    
+
+
+}

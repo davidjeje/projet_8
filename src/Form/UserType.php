@@ -29,10 +29,13 @@ class UserType extends AbstractType
             [
                 'choices' => 
                 [          
-                    'ROLE_USER' => 'ROLE_USER',
                     'ROLE_ADMIN' => 'ROLE_ADMIN',
+                    'ROLE_USER' => 'ROLE_USER',
+                    'ROLE_CUSTOMER' => 'ROLE_CUSTOMER',
+                    
                 ],
                 'multiple'=> true,
+                //'Expanded'=> false,
             ]);
     }
 }

@@ -1,0 +1,35 @@
+<?php
+// tests/Controller/ClientControllerTest.php
+namespace App\tests\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+
+
+class DefaultControllerTest extends WebTestCase
+{
+    /**
+    * @var \Doctrine\ORM\EntityManager
+    */
+    private $entityManager;
+
+    
+    public function testIndexAction()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/');
+        // Premier test
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        //Deuxième test
+        // asserts that there are exactly 1 h1 tags on the page
+        $this->assertCount(1, $crawler->filter('h1'));
+        // asserts that the "Content-Type" header is "application/json"
+        $this->assertTrue
+        (
+            $client->getResponse()->headers->contains
+            (
+                '<title>To Do List app</title>'
+            ),
+            
+        );     
+    }
+}
