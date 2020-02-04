@@ -1,6 +1,6 @@
-<?php
+<?php 
 // tests/Controller/ClientControllerTest.php
-namespace App\tests\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Task;
