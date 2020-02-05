@@ -1,6 +1,6 @@
-<?php
+<?php 
 // tests/Controller/ClientControllerTest.php
-namespace App\tests\Controller;
+namespace App\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use App\Entity\Task;
@@ -19,9 +19,12 @@ class TaskControllerTest extends WebTestCase
         $crawler = $client->request('GET', '/tasks');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
         //Deuxième test
         // asserts that there are exactly 1 h1 tags on the page
-        $this->assertCount(1, $crawler->filter('h1'));
+       /* $this->assertCount(1, $crawler->filter('h4'));
+
+        //Troisième test
         // asserts that the "Content-Type" header is "application/json"
         $this->assertTrue
         (
@@ -31,91 +34,85 @@ class TaskControllerTest extends WebTestCase
             ),
             
         );
+
+        //Quatrième test
+        $link = $crawler
+        ->filter('a:contains("Créer un utilisateur")') // find all links with the text "Créer un utilisateur"
+        ->eq(0) // select the first link in the list
+        ->link();
+        // and click it
+        $crawler = $client->click($link);*/
         
         
     }
 
-    public function testCreateAction()
+    /*public function testCreateAction()
     {
         $client = static::createClient();
         $crawler = $client->request('POST', '/tasks/create');
         
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
         //Deuxième test
-        //$this->assertCount(1, $crawler->filter('h1'));
-        //$client->request('POST', '/submit', ['username' => 'user@attineos.com']);
-         /*$this->assertTrue
-        (
-            $client->getResponse()->headers->contains
-            (
-                '<title>To Do List app</title>'
-            ),
-            
-        );*/
-        // submits a raw JSON string in the request body
+        $link = $crawler
+        ->filter('a:contains("Créer un utilisateur")') // find all links with the text "Créer un utilisateur"
+        ->eq(0) // select the first link in the list
+        ->link();
+        // and click it
+        $crawler = $client->click($link);
+
         
     }
 
     public function testEditAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('POST', '/tasks/{id}/edit');
+        $crawler = $client->request('GET', '/tasks/{id}/edit');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
         //Deuxième test
-        // asserts that the "Content-Type" header is "application/json"
-        /*$this->assertTrue
-        (
-            $client->getResponse()->headers->contains
-            (
-                'Content-Type',
-                'application/json'
-            ),
-            'the "Content-Type" header is "application/json"' // optional message shown on failure
-        );*/
-        //$this->assertCount(1, $crawler->filter('h1'));
+        $link = $crawler
+        ->filter('a:contains("Créer un utilisateur")') // find all links with the text "Créer un utilisateur"
+        ->eq(0) // select the first link in the list
+        ->link();
+        // and click it
+        $crawler = $client->click($link);
+
+        //Troisième test
+        $form = $crawler->selectButton('submit')->form();
+
+        // set some values
+        $form['title'] = 'Coiffeur';
+        $form['content'] = 'RDV coiffeur à 16h .';
+
+        // submit the form
+        $crawler = $client->submit($form);
+
+        //Quatrième test
+        // asserts that the response matches a given CSS selector.
+        $this->assertGreaterThan(0, $crawler->filter('a')->count());
+
     }
 
     public function testToggleTaskAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('POST', '/tasks/{id}/toggle');
+        $crawler = $client->request('GET', '/tasks/{id}/toggle');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        //Deuxième test
-        // asserts that the "Content-Type" header is "application/json"
-        /*$this->assertTrue
-        (
-            $client->getResponse()->headers->contains
-            (
-                'Content-Type',
-                'application/json'
-            ),
-            'the "Content-Type" header is "application/json"' // optional message shown on failure
-        );*/
-        //$this->assertCount(1, $crawler->filter('h1'));
+        
     }
 
     public function testDeleteTaskAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('POST', '/tasks/{id}/delete');
+        $crawler = $client->request('GET', '/tasks/{id}/delete');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
-        //Deuxième test
-        // asserts that the "Content-Type" header is "application/json"
-        /*$this->assertTrue
-        (
-            $client->getResponse()->headers->contains
-            (
-                'Content-Type',
-                'application/json'
-            ),
-            'the "Content-Type" header is "application/json"' // optional message shown on failure
-        );*/
-        //$this->assertCount(1, $crawler->filter('h1'));
-    }
+        
+    }*/
 
     
 
