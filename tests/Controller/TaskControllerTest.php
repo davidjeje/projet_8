@@ -7,12 +7,7 @@ use App\Entity\Task;
 
 class TaskControllerTest extends WebTestCase
 {
-    /**
-    * @var \Doctrine\ORM\EntityManager
-    */
-    private $entityManager;
-
-    
+   
     public function testGetlistAction()
     {
         $client = static::createClient();

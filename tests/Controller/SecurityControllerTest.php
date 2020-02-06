@@ -7,11 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class SecurityControllerTest extends WebTestCase
 {
-    /**
-    * @var \Doctrine\ORM\EntityManager
-    */
-    private $entityManager;
-
     
     public function testloginAction()
     {

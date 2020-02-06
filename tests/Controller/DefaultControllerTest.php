@@ -7,11 +7,6 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class DefaultControllerTest extends WebTestCase
 {
-    /**
-    * @var \Doctrine\ORM\EntityManager
-    */
-    private $entityManager;
-
     
     public function testIndexAction()
     {

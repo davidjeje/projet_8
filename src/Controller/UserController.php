@@ -31,13 +31,13 @@ class UserController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+            $orm = $this->getDoctrine()->getManager();
             
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
 
-            $em->persist($user);
-            $em->flush();
+            $orm->persist($user);
+            $orm->flush();
 
             $this->addFlash('success', "L'utilisateur a bien été ajouté.");
 
