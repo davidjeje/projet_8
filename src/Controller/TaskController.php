@@ -5,22 +5,29 @@ namespace App\Controller;
 use App\Entity\Task;
 use App\Entity\User;
 use App\Form\TaskType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Repository\TaskRepository;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 
-class TaskController extends Controller
+class TaskController extends AbstractController
 {
     /**
      * @Route("/tasks", name="task_list")
      */
-    public function listAction(/*User $user*/)
+    public function listAction()
     {
-        //$user = $this->getUser();
         return $this->render('task/list.html.twig', 
-        ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()/*,
-        'user' => $user*/]);
+        ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()]);
     }
+
+    /**
+     * @Route("/tasks/done", name="task_done")
+     */
+    /*public function listActionDone()
+    {
+        return $this->render('task/index.html.twig', ['tasks' => $this->getDoctrine()->getRepository('App:Task')->findAll()]);
+    }*/
 
     /**
      * @Route("/tasks/create", name="task_create")
@@ -34,12 +41,11 @@ class TaskController extends Controller
 
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) 
+        {
             $orm = $this->getDoctrine()->getManager();
 
-            //$user->addTask($task);
-
-            $task->setAutor($this->getUser());
+            //$task->setAutor($this->getUser());
             $task->setAutor($user);
             $orm->persist($task);
             $orm->flush();
@@ -60,9 +66,9 @@ class TaskController extends Controller
     {
         $form = $this->createForm(TaskType::class, $task);
 
-        $form->handleRequest($request);
+        $form->handleRequest($request);  
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             $this->addFlash('success', 'La tâche a bien été modifiée.');

@@ -18,27 +18,10 @@ class DefaultControllerTest extends WebTestCase
         $client = static::createClient();
         $crawler = $client->request('GET', '/');
         // Premier test
-        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+        $this->assertEquals(302, $client->getResponse()->getStatusCode());
         //Deuxième test
         // asserts that there are exactly 1 h1 tags on the page
-        $this->assertCount(1, $crawler->filter('h1'));
-        // asserts that the "Content-Type" header is "application/json"
-        $this->assertTrue
-        (
-            $client->getResponse()->headers->contains
-            (
-                '<title>To Do List app</title>'
-            ),
-            
-        );
-
-        //Troisième test
-        $link = $crawler
-        ->filter('a:contains("Créer un utilisateur")') // find all links with the text "Créer un utilisateur"
-        ->eq(0) // select the first link in the list
-        ->link();
-        // and click it
-        $crawler = $client->click($link);
+        $this->assertCount(0, $crawler->filter('h1'));
 
         //Quatrième test
         // asserts that the response matches a given CSS selector.

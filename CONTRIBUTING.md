@@ -1,4 +1,4 @@
-# Voici la marche à suivre pour tous les développeurs qui souhaitent apporter des modifications au projet.  
+# Contribution pour apporter des modifications au projet.  
 
 Dans un premier temps, Vous allez récupérer le projet_8 sur Github pour l’installer sur votre machine en local. Ensuite, il est conseillé de faire une analyse sur la qualité du code et de sa performance avant d’apporter des modifications au code existant. Pour cela, vous pouvez utiliser des logiciels comme codacy et blackfire. Dans un second temps, vous allez utiliser un logiciel de gestion de version qui va vous permettre de versionner votre code, c'est-à-dire gérer les versions de votre code au fur et à mesure que vous le modifiez. 
 
