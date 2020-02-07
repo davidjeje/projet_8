@@ -8,10 +8,10 @@ vous pouvez utiliser Git, Mercurial, Bazaar, etc.
 Une fois que vous avez travaillé sur votre code, vous allez lancer les tests de qualité de code et de performance. Cette vérification nous montre l’évolution de la qualité et de la performance après l’ajout du nouveau code. Si le code du projet est toujours performant voir même mieux avec la modification, alors vous pouvez commit le code et vous allez les envoyer sur un remote, c'est-à-dire Github dans notre cas de figure. Utiliser un remote externe va aussi vous permettre de travailler sur des projets à plusieurs, pour que tout le monde ait accès aux dernières modifications de chacun sur un remote partagé.  
 
 **Vous allez pouvoir notamment** : 
-	* Communiquer avec des autres developpeurs et signaler des problemes de code en declarant des issues
-	* Partager des morceaux de code en ligne à laide de gists 
-	* Recuperer du code depuis un autre repository 
-	*Proposer des modifications de code à des autres repos en faisant des pull requests 
+		* Communiquer avec des autres developpeurs et signaler des problemes de code en declarant des issues
+		* Partager des morceaux de code en ligne a laide de gists 
+		* Recuperer du code depuis un autre repository 
+		*Proposer des modifications de code a des autres repos en faisant des pull requests 
 
 > Ça tombe bien, ce dernier point est justement l'objet de cette documentation !!!
 
