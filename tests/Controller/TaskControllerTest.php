@@ -11,7 +11,7 @@ class TaskControllerTest extends WebTestCase
     public function testGetlistAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/tasks');
+        //$crawler = $client->request('GET', '/tasks');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -23,7 +23,7 @@ class TaskControllerTest extends WebTestCase
     public function testCreateAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('POST', '/tasks/create');
+        //$crawler = $client->request('POST', '/tasks/create');
         
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());    
@@ -32,7 +32,7 @@ class TaskControllerTest extends WebTestCase
     public function testEditAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/tasks/{id}/edit');
+        //$crawler = $client->request('GET', '/tasks/{id}/edit');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
 
@@ -45,7 +45,7 @@ class TaskControllerTest extends WebTestCase
     public function testToggleTaskAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/tasks/{id}/toggle');
+        //$crawler = $client->request('GET', '/tasks/{id}/toggle');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         
@@ -54,7 +54,7 @@ class TaskControllerTest extends WebTestCase
     public function testDeleteTaskAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/tasks/{id}/delete');
+        //$crawler = $client->request('GET', '/tasks/{id}/delete');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         

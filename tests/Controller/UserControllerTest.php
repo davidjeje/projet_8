@@ -10,7 +10,7 @@ class UserControllerTest extends WebTestCase
     public function testGetListAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/users');
+        //$crawler = $client->request('GET', '/users');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         
@@ -24,7 +24,7 @@ class UserControllerTest extends WebTestCase
     public function testCreateAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/users/create');
+        //$crawler = $client->request('GET', '/users/create');
         
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
@@ -34,7 +34,7 @@ class UserControllerTest extends WebTestCase
     public function testEditAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/users/{id}/edit');
+        //$crawler = $client->request('GET', '/users/{id}/edit');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         //Deuxième test
