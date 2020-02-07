@@ -1,4 +1,7 @@
 # Project 8 ToDoList Openclassrooms
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2333d9246f814a1f9192e003e3c774b1)](https://www.codacy.com/manual/davidjeje/projet_8?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=davidjeje/projet_8&amp;utm_campaign=Badge_Grade)
+
 **Symfony definition:**
 
 > Symfony is a set of PHP components and a free MVC framework written in PHP. It provides flexible and adaptable features that facilitate and accelerate the development of a website.
