@@ -1,7 +1,6 @@
 
 # Project 8 ToDoList Openclassrooms
 
-
 **Symfony definition:**
 
 > Symfony is a set of PHP components and a free MVC framework written in PHP. It provides flexible and adaptable features that facilitate and accelerate the development of a website.

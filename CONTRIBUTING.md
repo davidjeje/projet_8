@@ -9,15 +9,15 @@ Une fois que vous avez travaillé sur votre code, vous allez lancer les tests de
 
 **Vous allez pouvoir notamment** : 
 	* Communiquer avec des autres developpeurs et signaler des problemes de code en declarant des issues
-	* Partager des morceaux de code en ligne à l'aide de gists 
+	* Partager des morceaux de code en ligne à laide de gists 
 	* Recuperer du code depuis un autre repository 
 	*Proposer des modifications de code à des autres repos en faisant des pull requests 
 
 > Ça tombe bien, ce dernier point est justement l'objet de cette documentation !!!
 
-Les modifications envoyées par la pull requests arrivent sur une branche de développement qui contient exactement le même code fonctionnel que sur la branche principale qui se nomme master. Une fois le code ajouté à la branche develop, on va donc le tester, en gros faire une vérification. Si tout fonctionne, Le code est ajouté sur la branche master.
+Les modifications envoyees par la pull requests arrivent sur une branche de developpement qui contient exactement le même code fonctionnel que sur la branche principale qui se nomme master. Une fois le code ajoute à la branche develop, on va donc le tester, en gros faire une verification. Si tout fonctionne, Le code est ajoute sur la branche master.
 
 Cette documentation touche à sa fin. Voici de la documentation pour vous aider avec :
-*		[git et github](https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github/2433586-quest-ce-que-versionner-son-code). 
-*		[Pour codacy](https://support.codacy.com/hc/en-us) . 
-*		[Pour Blackfire](https://www.google.com/search?q=blackfire&oq=blackfire&aqs=chrome..69i60j69i57j69i59j0l2j69i60l3.8134j1j7&sourceid=chrome&ie=UTF-8) .
+		*[git et github](https://openclassrooms.com/fr/courses/2342361-gerez-votre-code-avec-git-et-github/2433586-quest-ce-que-versionner-son-code). 
+		*[Pour codacy](https://support.codacy.com/hc/en-us) . 
+		*[Pour Blackfire](https://www.google.com/search?q=blackfire&oq=blackfire&aqs=chrome..69i60j69i57j69i59j0l2j69i60l3.8134j1j7&sourceid=chrome&ie=UTF-8) .
