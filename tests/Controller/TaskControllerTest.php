@@ -11,19 +11,19 @@ class TaskControllerTest extends WebTestCase
     public function testGetlistAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/tasks');
+        $crawler = $client->request('GET', '/tasks');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
         //Deuxième test
         // asserts that there are exactly 1 h1 tags on the page
-        //$this->assertCount(12, $crawler->filter('h4'));       
+        $this->assertCount(18, $crawler->filter('h4'));       
     }
 
     public function testCreateAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('POST', '/tasks/create');
+        $crawler = $client->request('POST', '/tasks/create');
         
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());    
@@ -32,20 +32,20 @@ class TaskControllerTest extends WebTestCase
     public function testEditAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/tasks/{id}/edit');
+        $crawler = $client->request('GET', '/tasks/{id}/edit');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
 
         //Quatrième test
         // asserts that the response matches a given CSS selector.
-        //$this->assertGreaterThan(0, $crawler->filter('a')->count());
+        $this->assertGreaterThan(0, $crawler->filter('a')->count());
 
     }
 
     public function testToggleTaskAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/tasks/{id}/toggle');
+        $crawler = $client->request('GET', '/tasks/{id}/toggle');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         
@@ -54,7 +54,7 @@ class TaskControllerTest extends WebTestCase
     public function testDeleteTaskAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/tasks/{id}/delete');
+        $crawler = $client->request('GET', '/tasks/{id}/delete');
         // Premier test
         $this->assertEquals(404, $client->getResponse()->getStatusCode());
         

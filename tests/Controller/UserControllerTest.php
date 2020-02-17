@@ -10,13 +10,13 @@ class UserControllerTest extends WebTestCase
     public function testGetListAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/users');
+        $crawler = $client->request('GET', '/users');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         
         //Troisième test
         // asserts that the response matches a given CSS selector.
-        //$this->assertGreaterThan(0, $crawler->filter('a')->count());
+        $this->assertGreaterThan(0, $crawler->filter('a')->count());
 
         
     }
@@ -24,7 +24,7 @@ class UserControllerTest extends WebTestCase
     public function testCreateAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/users/create');
+        $crawler = $client->request('GET', '/users/create');
         
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
@@ -34,11 +34,11 @@ class UserControllerTest extends WebTestCase
     public function testEditAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/users/{id}/edit');
+        $crawler = $client->request('GET', '/users/{id}/edit');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         //Deuxième test
-        //$this->assertCount(0, $crawler->filter('h1')); 
+        $this->assertCount(0, $crawler->filter('h1')); 
     }
 
 }

@@ -11,7 +11,7 @@ class SecurityControllerTest extends WebTestCase
     public function testloginAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/login');
+        $crawler = $client->request('GET', '/login');
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -34,7 +34,7 @@ class SecurityControllerTest extends WebTestCase
     public function loginCheck()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/login_check');
+        $crawler = $client->request('GET', '/login_check');
         
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
@@ -44,7 +44,7 @@ class SecurityControllerTest extends WebTestCase
     public function testLogoutCheck()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/logout');
+        $crawler = $client->request('GET', '/logout');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         

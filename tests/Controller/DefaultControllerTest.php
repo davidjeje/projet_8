@@ -11,7 +11,7 @@ class DefaultControllerTest extends WebTestCase
     public function testIndexAction()
     {
         $client = static::createClient();
-        //$crawler = $client->request('GET', '/');
+        $crawler = $client->request('GET', '/');
         // Premier test
         $this->assertEquals(302, $client->getResponse()->getStatusCode());
         //Deuxième test
