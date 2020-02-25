@@ -1,0 +1,22 @@
+
+
+Code Coverage Report:     
+  2020-02-25 01:58:19     
+                          
+ Summary:                 
+  Classes:  7.69% (1/13)  
+  Methods: 21.82% (12/55) 
+  Lines:   15.61% (32/205)
+
+\App::App\Kernel
+  Methods:  50.00% ( 2/ 4)   Lines:  30.00% (  6/ 20)
+\App\Controller::App\Controller\SecurityController
+  Methods:  33.33% ( 1/ 3)   Lines:  71.43% (  5/  7)
+\App\Controller::App\Controller\TaskController
+  Methods:  20.00% ( 1/ 5)   Lines:  27.27% (  9/ 33)
+\App\Entity::App\Entity\Task
+  Methods:  42.86% ( 6/14)   Lines:  36.36% (  8/ 22)
+\App\Entity::App\Entity\User
+  Methods:   6.25% ( 1/16)   Lines:   3.45% (  1/ 29)
+\App\Form::App\Form\TaskType
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  3/  3)

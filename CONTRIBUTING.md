@@ -12,7 +12,7 @@ Une fois que vous avez travaillé sur votre code, vous allez lancer les tests de
 		* Partager des morceaux de code en ligne a laide de gists 
 		* Recuperer du code depuis un autre repository 
 		*Proposer des modifications de code a des autres repos en faisant des pull requests 
-
+		
 > Ça tombe bien, ce dernier point est justement l objet de cette documentation !!!
 
 Les modifications envoyees par la pull requests arrivent sur une branche de developpement qui contient exactement le même code fonctionnel que sur la branche principale qui se nomme master. Une fois le code ajoute à la branche develop, on va donc le tester, en gros faire une verification. Si tout fonctionne, Le code est ajoute sur la branche master.
