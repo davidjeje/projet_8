@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class UserType extends AbstractType
+class UserType extends AbstractType 
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -32,7 +32,7 @@ class UserType extends AbstractType
                     'ROLE_ADMIN' => 'ROLE_ADMIN',
                     'ROLE_USER' => 'ROLE_USER',                 
                 ],
-                'multiple'=> true,
+                'multiple'=> true ,
                 //'Expanded'=> false,
             ]);
     }

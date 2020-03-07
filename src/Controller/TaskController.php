@@ -36,7 +36,7 @@ class TaskController extends AbstractController
     {
         $user = $this->getUser();
         
-        $task = new Task();
+        $task = new Task(); 
         $form = $this->createForm(TaskType::class, $task);
 
         $form->handleRequest($request);

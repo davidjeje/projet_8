@@ -2,16 +2,16 @@
 // tests/Controller/ClientControllerTest.php
 namespace App\tests\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase; 
 
 
-class SecurityControllerTest extends WebTestCase
+class SecurityControllerTest extends WebTestCase 
 {
     
     public function testloginAction()
     {
         $client = static::createClient();
-        $crawler = $client->request('GET', '/login');
+        $crawler = $client->request('GET', '/login'); 
         // Premier test
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
 
@@ -22,6 +22,12 @@ class SecurityControllerTest extends WebTestCase
         //Troisième test
         $this->assertContains(
         'Mot de passe',
+        $client->getResponse()->getContent()
+        );
+
+        //Quatrième test
+        $this->assertContains(
+        "Nom d'utilisateur",
         $client->getResponse()->getContent()
         );
 
