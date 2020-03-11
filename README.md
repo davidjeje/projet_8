@@ -1,14 +1,8 @@
-ToDoList
-========
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f49bddf4bd404acf9ad4d397d6bb6c70)](https://app.codacy.com/manual/davidjeje/projet_8?utm_source=github.com&utm_medium=referral&utm_content=davidjeje/projet_8&utm_campaign=Badge_Grade_Dashboard)
-
-Base du projet #8 : Améliorez un projet existant
-
-https://openclassrooms.com/projects/ameliorer-un-projet-existant-1
 
 # Project 8 Openclassrooms
 
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/2333d9246f814a1f9192e003e3c774b1)](https://www.codacy.com/manual/davidjeje/projet_8?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=davidjeje/projet_8&amp;utm_campaign=Badge_Grade)
 
 **Symfony definition:**
 

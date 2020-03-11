@@ -42,6 +42,14 @@
                 <a href="{{ path('user_create') }}" class="btn btn-primary">Créer un utilisateur</a>
                 {% endif %}
 
+                {% if is_granted('ROLE_ADMIN') %}  
+                <a href="{{ path('user_list') }}" class="btn btn-warning">Liste des utilisateurs</a>
+                {% endif %}
+
+                  
+                <a href="{{ path('homepage') }}" class="btn btn-link">Retour sur la page d'accueil </a>
+                
+
                 {% if app.user %}
                 <a href="{{ path('logout') }}" class="pull-right btn btn-danger">Se déconnecter</a>
                 {% endif %}
